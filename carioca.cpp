@@ -50,7 +50,9 @@ int main(int argc, char* argv[]) {
         ray::DrawTexture(frames[current_frame], 0, 0, ray::WHITE);
         ray::EndDrawing();
     }
-    for (auto &t : frames) ray::UnloadTexture(t);
+    for(int i = 0; i < frame_count; i++){
+        ray::UnloadTexture(frames[i]);
+    }
     ray::UnloadSound(sound);
     ray::CloseAudioDevice();
     ray::CloseWindow();
